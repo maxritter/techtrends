@@ -6,7 +6,7 @@ on:
       - "main"
 
 jobs:
-  docker:
+  ci-github-actions:
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
@@ -20,9 +20,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
+
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: techtrends:latest
+          tags: maxritter/techtrends:tagname
