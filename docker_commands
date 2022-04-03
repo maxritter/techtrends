@@ -1,0 +1,36 @@
+# Build Docker Container
+docker build -t techtrends .
+
+# Launch and stream application logs
+docker run --publish 7111:3111 techtrends
+
+# Logs from the container
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+172.17.0.1 - - [03/Apr/2022 11:54:37] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [03/Apr/2022 11:54:37] "GET /static/css/main.css HTTP/1.1" 200 -
+172.17.0.1 - - [03/Apr/2022 11:54:37] "GET /favicon.ico HTTP/1.1" 404 -
+2022-04-03T11:54:39.492208+0000 Article "CNCF Cloud Native Interactive Landscape" loaded!
+172.17.0.1 - - [03/Apr/2022 11:54:39] "GET /4 HTTP/1.1" 200 -
+2022-04-03T11:54:41.796099+0000 A non-existing article was accessed! "404"
+172.17.0.1 - - [03/Apr/2022 11:54:41] "GET /10 HTTP/1.1" 404 -
+172.17.0.1 - - [03/Apr/2022 11:55:13] "GET / HTTP/1.1" 200 -
+2022-04-03T11:55:13.872433+0000 Article "KubeCon + CloudNativeCon 2021" loaded!
+172.17.0.1 - - [03/Apr/2022 11:55:13] "GET /2 HTTP/1.1" 200 -
+172.17.0.1 - - [03/Apr/2022 11:55:14] "GET /create HTTP/1.1" 200 -
+2022-04-03T11:55:19.277588+0000 A new article "TEST" was created!
+172.17.0.1 - - [03/Apr/2022 11:55:19] "POST /create HTTP/1.1" 302 -
+172.17.0.1 - - [03/Apr/2022 11:55:19] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [03/Apr/2022 11:55:22] "GET /healthz HTTP/1.1" 200 -
+172.17.0.1 - - [03/Apr/2022 11:55:25] "GET /metrics HTTP/1.1" 200 -
+2022-04-03T11:55:33.349676+0000 A non-existing article was accessed! "404"
+172.17.0.1 - - [03/Apr/2022 11:55:33] "GET /100 HTTP/1.1" 404 -
+2022-04-03T11:55:38.654873+0000 Article "2020 CNCF Annual Report" loaded!
+172.17.0.1 - - [03/Apr/2022 11:55:38] "GET /1 HTTP/1.1" 200 -
+2022-04-03T11:55:40.185641+0000 About Us page was loaded!
+172.17.0.1 - - [03/Apr/2022 11:55:40] "GET /about HTTP/1.1" 200 -
+172.17.0.1 - - [03/Apr/2022 11:55:41] "GET / HTTP/1.1" 200 -
