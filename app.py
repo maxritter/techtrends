@@ -72,8 +72,8 @@ def create():
             flash('Title is required!')
         else:
             connection = get_db_connection()
-            connection.execute('INSERT INTO posts (title, content) VALUES (?, ?, ?)',
-                               (title, content, '0'))
+            connection.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
+                               (title, content))
             connection.commit()
             connection.close()
 
